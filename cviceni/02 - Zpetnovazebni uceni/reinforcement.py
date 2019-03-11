@@ -51,14 +51,8 @@ class RandomAgent:
 
 agent = RandomAgent(env.action_space)
 
-
 # Pri trenovani agenta potom budeme potrebovat odehrat mnoho iteraci - to muzeme
 # udelat napriklad podobne jako nize.
-
-import qlearning
-
-sd = qlearning.StateDiscretizer(np.array([env.observation_space.low, env.observation_space.high]).T, [20, 20])
-agent = qlearning.QLearningAgent(env.action_space, sd, train=True)
 
 total_rewards = []
 for i in range(10000):
