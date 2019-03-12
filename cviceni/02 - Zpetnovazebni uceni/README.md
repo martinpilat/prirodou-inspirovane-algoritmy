@@ -1,4 +1,4 @@
-# Zpětovazební učení
+# Zpětnovazební učení
 
 V dnešních cvičeních si vyzkoušíme zpětnovazební učení a ukážeme si Open AI gym 
 a jak ho použít. Popis základních funkcí Open AI gym je přímo v souboru 
