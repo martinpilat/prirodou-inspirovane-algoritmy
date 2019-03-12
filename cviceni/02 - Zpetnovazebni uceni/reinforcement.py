@@ -42,11 +42,12 @@ class RandomAgent:
   
     def __init__(self, actions):
         self.actions = actions
+        self.train = True
     
     def act(self, observe, reward, done):
         return self.actions.sample()
     
-    def stop_episode(self):
+    def reset(self):
         pass
 
 agent = RandomAgent(env.action_space)
@@ -55,9 +56,9 @@ agent = RandomAgent(env.action_space)
 # udelat napriklad podobne jako nize.
 
 total_rewards = []
-for i in range(10000):
+for i in range(1000):
     obs = env.reset()
-    agent.stop_episode()
+    agent.reset()
     
     done = False
     r = 0
@@ -75,11 +76,11 @@ for i in range(10000):
 agent.train = False
 import matplotlib.pyplot as plt
 
-utils.show_animation(agent, env, steps=200, episodes=5)
+utils.show_animation(agent, env, steps=1000, episodes=5)
 
 # zobrazime graf uceni - show nam zaroven zajisti, ze program neskonci, dokud 
 # nezavreme graf
-plt.plot(utils.moving_average(total_rewards, 100))
+plt.plot(utils.moving_average(total_rewards, 10))
 plt.show() 
 
 env.close()

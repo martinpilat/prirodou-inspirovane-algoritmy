@@ -31,7 +31,7 @@ def show_animation(agent, env, steps=200, episodes=1):
             obs, r, done, _ = env.step(action)
             R += r
             t += 1
-        agent.stop_episode()
+        agent.reset()
 
 def moving_average(x, n):
     weights = np.ones(n)/n
